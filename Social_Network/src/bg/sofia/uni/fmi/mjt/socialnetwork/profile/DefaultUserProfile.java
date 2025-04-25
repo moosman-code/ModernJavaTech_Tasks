@@ -19,19 +19,6 @@ public class DefaultUserProfile implements UserProfile, Comparable<UserProfile> 
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof UserProfile)) return false;
-        UserProfile otherUser = (UserProfile) o;
-        return Objects.equals(username, otherUser.getUsername());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(username);
-    }
-
-    @Override
     public Collection<Interest> getInterests() {
         return List.copyOf(interests);
     }
@@ -92,6 +79,23 @@ public class DefaultUserProfile implements UserProfile, Comparable<UserProfile> 
 
     @Override
     public int compareTo(UserProfile other) {
-        return this.friends.size() - other.getFriends().size();
+        int cmp = Integer.compare(this.friends.size(), other.getFriends().size());
+        if (cmp == 0) {
+            return this.username.compareTo(other.getUsername());
+        }
+        return cmp;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserProfile)) return false;
+        UserProfile otherUser = (UserProfile) o;
+        return Objects.equals(username, otherUser.getUsername());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
     }
 }

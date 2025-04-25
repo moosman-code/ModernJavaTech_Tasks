@@ -14,7 +14,7 @@ public class SocialNetworkImpl implements SocialNetwork{
     private ArrayList<SocialFeedPost> posts;
 
     public SocialNetworkImpl() {
-        users = new HashSet<>();
+        this.users = new HashSet<>();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class SocialNetworkImpl implements SocialNetwork{
     @Override
     public Post post(UserProfile userProfile, String content) throws UserRegistrationException {
         if (userProfile == null || content == null) {
-            throw new IllegalArgumentException("User profile and post cannot be null");
+            throw new IllegalArgumentException("User profile and post content cannot be null");
         }
 
         try {
@@ -73,6 +73,7 @@ public class SocialNetworkImpl implements SocialNetwork{
         Set<UserProfile> result = new HashSet<>();
         UserProfile author = post.getAuthor();
         Collection<UserProfile> authorFriends = author.getFriends();
+
         for (UserProfile user : users) {
             if (haveTheSameFriendNetwork(author, user) && haveCommonInterests(author, user)) {
                 result.add(user);
@@ -100,13 +101,11 @@ public class SocialNetworkImpl implements SocialNetwork{
         if (first == null || second == null) {
             throw new IllegalArgumentException("User profiles cannot be null");
         }
-//        if (first.equals(second)) {
-//            throw new IllegalArgumentException("User profiles must be different");
-//        }
 
         Set<UserProfile> done = new HashSet<>();
         Queue<UserProfile> check = new ArrayDeque<>();
         check.add(first);
+
         while(!check.isEmpty()) {
             UserProfile current = check.poll();
             if (done.contains(current)) {
@@ -145,6 +144,7 @@ public class SocialNetworkImpl implements SocialNetwork{
 
     @Override
     public SortedSet<UserProfile> getAllProfilesSortedByFriendsCount() {
-        return new TreeSet<>(users);
+        SortedSet<UserProfile> sortedUsers = new TreeSet<>(users);
+        return sortedUsers;
     }
 }

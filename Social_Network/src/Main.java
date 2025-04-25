@@ -21,7 +21,6 @@ public class Main {
         bob.addFriend(charlie);
         bob.addInterest(BOOKS);
         charlie.addInterest(BOOKS);
-//        bob.getFriends().forEach(fr -> System.out.println(fr.getUsername()));
 
         // Create some test posts
         Post post1 = new SocialFeedPost(alice, "This is Alice's first post!");
@@ -35,8 +34,13 @@ public class Main {
             network.registerUser(charlie);
             network.registerUser(dad);
 
-//          network.getMutualFriends(alice, bob).forEach(fr -> System.out.println(fr.getUsername()));
-//            network.getReachedUsers(post2).forEach(user -> System.out.println(user.getUsername()));
+            alice.getFriends().forEach(fr -> System.out.println(fr.getUsername()));
+            alice.unfriend(bob);
+            alice.getFriends().forEach(fr -> System.out.println(fr.getUsername()));
+
+            network.getMutualFriends(alice, bob).forEach(fr -> System.out.println(fr.getUsername()));
+            network.getReachedUsers(post2).forEach(user -> System.out.println(user.getUsername()));
+            network.getAllProfilesSortedByFriendsCount().forEach(profile -> System.out.println(profile.getUsername()));
         } catch (UserRegistrationException e) {
             System.out.println("Error while registrating");
         }

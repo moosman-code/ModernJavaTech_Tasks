@@ -69,6 +69,7 @@ public class SocialFeedPost implements Post {
         @Override
         public Map<ReactionType, Set<UserProfile>> getAllReactions() {
             Map<ReactionType, Set<UserProfile>> result = new HashMap<>();
+
             for (Map.Entry<UserProfile, ReactionType> entry : reactions.entrySet()) {
                 Set<UserProfile> reaction = result.putIfAbsent(entry.getValue(), Set.of(entry.getKey()));
 

@@ -22,7 +22,6 @@ public class Main {
         bob.addInterest(BOOKS);
         charlie.addInterest(BOOKS);
 
-        // Create some test posts
         Post post1 = new SocialFeedPost(alice, "This is Alice's first post!");
         Post post2 = new SocialFeedPost(bob, "Bob just joined the platform!");
         Post post3 = new SocialFeedPost(charlie, "Charlie shares his thoughts on technology.");
@@ -38,6 +37,7 @@ public class Main {
             alice.unfriend(bob);
             alice.getFriends().forEach(fr -> System.out.println(fr.getUsername()));
 
+            // Network test
             network.getMutualFriends(alice, bob).forEach(fr -> System.out.println(fr.getUsername()));
             network.getReachedUsers(post2).forEach(user -> System.out.println(user.getUsername()));
             network.getAllProfilesSortedByFriendsCount().forEach(profile -> System.out.println(profile.getUsername()));

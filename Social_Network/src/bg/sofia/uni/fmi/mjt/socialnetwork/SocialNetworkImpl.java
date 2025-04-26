@@ -144,7 +144,6 @@ public class SocialNetworkImpl implements SocialNetwork{
 
     @Override
     public SortedSet<UserProfile> getAllProfilesSortedByFriendsCount() {
-        SortedSet<UserProfile> sortedUsers = new TreeSet<>(users);
-        return sortedUsers;
+        return new TreeSet<>(users);
     }
 }

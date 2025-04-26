@@ -1,22 +1,20 @@
 package bg.sofia.uni.fmi.mjt.vehiclerent.vehicle;
 
-import bg.sofia.uni.fmi.mjt.vehiclerent.driver.Driver;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.InvalidRentingPeriodException;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.VehicleNotRentedException;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Car extends Vehicle{
 
     private static final int PRICE_PER_SEAT = 5;
 
-    private FuelType fuelType;
-    private int numberOfSeats;
-    private double pricePerWeek;
-    private double pricePerDay;
-    private double pricePerHour;
+    private final FuelType fuelType;
+    private final int numberOfSeats;
+    private final double pricePerWeek;
+    private final double pricePerDay;
+    private final double pricePerHour;
 
     public Car(String id,
                String model,

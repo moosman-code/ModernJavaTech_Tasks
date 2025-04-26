@@ -5,12 +5,9 @@ import bg.sofia.uni.fmi.mjt.vehiclerent.exception.InvalidRentingPeriodException;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.VehicleAlreadyRentedException;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.VehicleNotRentedException;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public abstract class Vehicle {
-
-    protected static final int DAYS_IN_YEAR = LocalDate.now().lengthOfYear();
 
     protected String id;
     protected String model;

@@ -1,11 +1,9 @@
 package bg.sofia.uni.fmi.mjt.vehiclerent.vehicle;
 
-import bg.sofia.uni.fmi.mjt.vehiclerent.driver.Driver;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.InvalidRentingPeriodException;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.VehicleNotRentedException;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Caravan extends Vehicle{

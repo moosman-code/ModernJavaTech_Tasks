@@ -1,18 +1,14 @@
 package bg.sofia.uni.fmi.mjt.vehiclerent.vehicle;
 
-import java.time.Duration;
-
-import bg.sofia.uni.fmi.mjt.vehiclerent.driver.Driver;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.InvalidRentingPeriodException;
-import bg.sofia.uni.fmi.mjt.vehiclerent.exception.VehicleAlreadyRentedException;
 import bg.sofia.uni.fmi.mjt.vehiclerent.exception.VehicleNotRentedException;
 
-import java.time.LocalDate;
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Bicycle extends Vehicle {
-    private double pricePerDay;
-    private double pricePerHour;
+    private final double pricePerDay;
+    private final double pricePerHour;
 
     public Bicycle(String id, String model, double pricePerDay, double pricePerHour) {
         super(id, model);

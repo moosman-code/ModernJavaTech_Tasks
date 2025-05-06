@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e3784ab-7e25-465f-bd3e-9c4d27221eeb" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2wdyENaAk8pPjYDWUWTheU5b6Qj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.AthleteTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.CalcTest.TestMultiplyXByZero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CalcTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ComparatorTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ComparatorTest.testComparatorIfNation1HasMoreMedals.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ComparatorTest.testComparatorIfNation1IsNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ComparatorTest.testComparatorIfNation2IsNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ComparatorTest.testComparatorIfNationsHaveEqualsAmountOfMedals.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.CompetitionTest.testCompetitionWithNullValues.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MJTOlympicsTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MJTOlympicsTest.testGetTotalMedalsWhenNationalityIsNotRegistered.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MJTOlympicsTest.testUpdateMedalStatisticsWhenCompetitorIsNotRegistered.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MJTOlympicsTest.testUpdateMedalStatisticsWhenCompetitorsIsNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NumberUtilsTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mjt__olympics__branch&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="bg.sofia.uni.fmi.mjt.math" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ComparatorTest">
+    <configuration name="ComparatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MJT_Olympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.olympics.comparator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator.ComparatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComparatorTest.testComparatorIfNation1HasMoreMedals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MJT_Olympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.olympics.comparator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator.ComparatorTest" />
+      <option name="METHOD_NAME" value="testComparatorIfNation1HasMoreMedals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComparatorTest.testComparatorIfNation1IsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MJT_Olympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.olympics.comparator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator.ComparatorTest" />
+      <option name="METHOD_NAME" value="testComparatorIfNation1IsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComparatorTest.testComparatorIfNation2IsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MJT_Olympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.olympics.comparator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator.ComparatorTest" />
+      <option name="METHOD_NAME" value="testComparatorIfNation2IsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComparatorTest.testComparatorIfNationsHaveEqualsAmountOfMedals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MJT_Olympics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bg.sofia.uni.fmi.mjt.olympics.comparator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.olympics.comparator.ComparatorTest" />
+      <option name="METHOD_NAME" value="testComparatorIfNationsHaveEqualsAmountOfMedals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ComparatorTest" />
+        <item itemvalue="JUnit.ComparatorTest.testComparatorIfNationsHaveEqualsAmountOfMedals" />
+        <item itemvalue="JUnit.ComparatorTest.testComparatorIfNation1HasMoreMedals" />
+        <item itemvalue="JUnit.ComparatorTest.testComparatorIfNation2IsNull" />
+        <item itemvalue="JUnit.ComparatorTest.testComparatorIfNation1IsNull" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e3784ab-7e25-465f-bd3e-9c4d27221eeb" name="Changes" comment="" />
+      <created>1746385636028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746385636028</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MJR_Olympics$NumberUtilsTest.ic" NAME="NumberUtilsTest Coverage Results" MODIFIED="1746439203250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>bg.sofia.uni.fmi.mjt.math.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MJR_Olympics$MJTOlympicsTest.ic" NAME="MJTOlympicsTest Coverage Results" MODIFIED="1746522595629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>bg.sofia.uni.fmi.mjt.olympics.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MJR_Olympics$CompetitionTest.ic" NAME="CompetitionTest Coverage Results" MODIFIED="1746450362622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>bg.sofia.uni.fmi.mjt.olympics.competition.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MJR_Olympics$AthleteTest.ic" NAME="AthleteTest Coverage Results" MODIFIED="1746446335392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>bg.sofia.uni.fmi.mjt.olympics.competitor.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MJR_Olympics$ComparatorTest.ic" NAME="ComparatorTest Coverage Results" MODIFIED="1746523526857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>bg.sofia.uni.fmi.mjt.olympics.comparator.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MJR_Olympics$CalcTest.ic" NAME="CalcTest Coverage Results" MODIFIED="1746437992537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>bg.sofia.uni.fmi.mjt.math.*</FILTER>
+    </SUITE>
+  </component>
+</project>

@@ -10,9 +10,9 @@ import static org.mockito.Mockito.when;
 
 public class ComparatorTest {
 
-    private final MJTOlympics mjtOlympicsMock = Mockito.mock(MJTOlympics.class);
+    private MJTOlympics mjtOlympicsMock = Mockito.mock(MJTOlympics.class);
 
-    private final NationMedalComparator nationMedalComparator = new NationMedalComparator(mjtOlympicsMock);
+    private NationMedalComparator nationMedalComparator = new NationMedalComparator(mjtOlympicsMock);
 
     @Test
     void testComparatorIfNation1IsNull() {

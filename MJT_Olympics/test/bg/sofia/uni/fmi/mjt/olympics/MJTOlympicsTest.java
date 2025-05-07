@@ -7,65 +7,64 @@ import bg.sofia.uni.fmi.mjt.olympics.competitor.Competitor;
 import bg.sofia.uni.fmi.mjt.olympics.competitor.Medal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import java.util.*;
+import java.util.EnumMap;
+import java.util.HashSet;
+import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class MJTOlympicsTest {
-    private Set<Competitor> registeredCompetitors;
-    private final CompetitionResultFetcher competitionResultFetcherMock = Mockito.mock(CompetitionResultFetcher.class);
+class MJTOlympicsTest {
 
-    private MJTOlympics mjtOlympics;
+    private MJTOlympics olympics;
+    private Competitor c1, c2, c3;
+    private Competition competition;
 
     @BeforeEach
     void setUp() {
-        Competitor athlete = new Athlete("1", "Garen", "Demacia");
-        Set<Competitor> competitors = new HashSet<>();
-        competitors.add(athlete);
-        registeredCompetitors = competitors;
-            mjtOlympics = new MJTOlympics(registeredCompetitors, competitionResultFetcherMock);
-    }
+        // Sample competitors
+        c1 = new Athlete("1", "Alice", "USA");
+        c2 = new Athlete("2", "Bob", "Germany");
+        c3 = new Athlete("3", "Charlie", "UK");
 
-    // updateMedalStatistics Tests
-    @Test
-    void testUpdateMedalStatisticsWhenCompetitorsIsNull() {
-        assertThrows(IllegalArgumentException.class,
-                () -> mjtOlympics.updateMedalStatistics(null),
-                "IllegalArgumentException was not thrown");
-    }
+        Set<Competitor> competitors = Set.of(c1, c2, c3);
+        competition = new Competition("Chilli", "100m Sprint", competitors);
 
-    @Test
-    void testUpdateMedalStatisticsWhenCompetitorIsNotRegistered() {
-        Competitor notPresentAthlete = new Athlete("2", "Will", "Jamaica");
+        // Use real (default) implementation of the interface
+        CompetitionResultFetcher fetcher = new CompetitionResultFetcher() {};
 
-        Set<Competitor> notPresentCompetitors = new HashSet<>();
-        notPresentCompetitors.add(notPresentAthlete);
-
-        Competition competition = new Competition("New Delhi", "Bicycling", notPresentCompetitors);
-
-        assertThrows(IllegalArgumentException.class,
-                () -> mjtOlympics.updateMedalStatistics(competition),
-                "IllegalArgumentException was not thrown");
-    }
-
-    // getTotalMedals
-    @Test
-    void testGetTotalMedalsWhenNationalityIsNull() {
-        assertThrows(IllegalArgumentException.class, () -> mjtOlympics.getTotalMedals(null),
-                "IllegalArgumentException was not thrown");
+        olympics = new MJTOlympics(competitors, fetcher);
     }
 
     @Test
-    void testGetTotalMedalsWhenNationalityIsNotRegistered() {
-        Map<String, EnumMap<Medal, Integer>> nationsMedalsTable = new HashMap<>();
-        EnumMap<Medal, Integer> medals = new EnumMap<>(Medal.class);
-        medals.put(Medal.SILVER, 2);
-        nationsMedalsTable.put("Chilli", medals);
+    void testGetTotalMedalsWithNoMedalsThrows() {
+        // Add a nation with an empty EnumMap for medals
+        olympics.getNationsMedalTable().put("Germany", new EnumMap<>(Medal.class));
 
+        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals("Germany"));
+    }
 
-        assertThrows(IllegalArgumentException.class, () -> mjtOlympics.getTotalMedals("Brazil"),
-                "IllegalArgumentException was not thrown");
+    @Test
+    void testGetTotalMedalsReturnsCorrectCount() {
+        EnumMap<Medal, Integer> medalCount = new EnumMap<>(Medal.class);
+        medalCount.put(Medal.GOLD, 2);
+        medalCount.put(Medal.SILVER, 1);
+
+        olympics.getNationsMedalTable().put("USA", medalCount);
+
+        int total = olympics.getTotalMedals("USA");
+        assertEquals(3, total);
+    }
+
+    @Test
+    void testUpdateMedalStatisticsWithNullCompetitionThrows() {
+        assertThrows(IllegalArgumentException.class, () -> olympics.updateMedalStatistics(null));
+    }
+
+    @Test
+    void testGetTotalMedalsWithInvalidNationThrows() {
+        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals(null));
+        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals(""));
+        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals("  "));
     }
 }

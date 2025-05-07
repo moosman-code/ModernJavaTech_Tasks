@@ -82,7 +82,7 @@ public class MJTOlympics implements Olympics {
 
         int totalMedals = 0;
         for (int count : nationMedals.values()) {
-            totalMedals = count;
+            totalMedals += count;
         }
 
         return totalMedals;

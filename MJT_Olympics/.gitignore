@@ -3,8 +3,12 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-/lib
-/.idea
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+lib
 
 ### Eclipse ###
 .apt_generated

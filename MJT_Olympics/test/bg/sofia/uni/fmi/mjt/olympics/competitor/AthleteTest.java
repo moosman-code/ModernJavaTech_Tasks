@@ -63,4 +63,23 @@ public class AthleteTest {
         assertTrue(firstAthlete.equals(thirdAthlete));
         assertEquals(firstAthlete.hashCode(), thirdAthlete.hashCode());
     }
+
+    // compareTo Tests
+    @Test
+    void testCompareToIfOtherIsNull() {
+        assertThrows(IllegalArgumentException.class, () -> firstAthlete.compareTo(null));
+    }
+
+    @Test
+    void testCompareToIfFirstAthleteHasAllMedalsLikeSecondAthlete() {
+        secondAthlete.addMedal(Medal.SILVER);
+        assertEquals(12, firstAthlete.compareTo(secondAthlete));
+    }
+
+    @Test
+    void testCompareToIfFirstAthleteHasMoreMedalsThanSecondAthlete() {
+        firstAthlete.addMedal(Medal.GOLD);
+        secondAthlete.addMedal(Medal.SILVER);
+        assertEquals(1, firstAthlete.compareTo(secondAthlete));
+    }
 }

@@ -1,9 +1,6 @@
 package bg.sofia.uni.fmi.mjt.olympics.competitor;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Athlete implements Competitor {
 
@@ -63,5 +60,31 @@ public class Athlete implements Competitor {
     @Override
     public int hashCode() {
         return Objects.hashCode(name);
+    }
+
+    @Override
+    public int compareTo(Competitor other) {
+        if (other == null) {
+            throw new IllegalArgumentException("Competitor cannot be null");
+        }
+
+        Collection<Medal> firstAthleteMedals = this.getMedals();
+        Collection<Medal> secondAthleteMedals = other.getMedals();
+
+        if (firstAthleteMedals.containsAll(secondAthleteMedals) && secondAthleteMedals.containsAll(firstAthleteMedals)) {
+            return this.getName().compareTo(other.getName());
+        }
+
+        Integer firstTotalValue  = Integer.valueOf(0);
+        for (Medal medal : firstAthleteMedals) {
+            firstTotalValue += medal.getPlace();
+        }
+
+        Integer secondTotalValue = Integer.valueOf(0);
+        for (Medal medal : secondAthleteMedals) {
+            secondTotalValue += medal.getPlace();
+        }
+
+        return firstTotalValue.compareTo(secondTotalValue);
     }
 }

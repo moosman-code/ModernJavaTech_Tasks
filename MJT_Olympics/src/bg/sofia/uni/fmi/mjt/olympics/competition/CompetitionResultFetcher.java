@@ -15,6 +15,10 @@ public interface CompetitionResultFetcher {
      * @return a TreeSet of competitors ranked by their performance in the competition
      */
     default TreeSet<Competitor> getResult(Competition competition) {
+        if (competition == null) {
+            throw new IllegalArgumentException("Competition cannot be null");
+        }
+
         return new TreeSet<>(competition.competitors());
     }
 }

@@ -32,7 +32,10 @@ public class MJTOlympics implements Olympics {
         validateCompetition(competition);
 
         TreeSet<Competitor> ranking = competitionResultFetcher.getResult(competition);
+        updateAthleteRankings(ranking);
+    }
 
+    private void updateAthleteRankings(TreeSet<Competitor> ranking) {
         int topN = Math.min(TOP_N_COMPETITORS, ranking.size());
         for (int i = 0; i < topN; i++) {
             Competitor competitor = ranking.pollFirst();

@@ -9,6 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.NullSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -59,11 +62,11 @@ class MJTOlympicsTest {
         assertEquals(3, total);
     }
 
-    @Test
-    void testGetTotalMedalsWithInvalidNationThrows() {
-        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals(null));
-        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals(""));
-        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals("  "));
+    @ParameterizedTest
+    @ValueSource(strings = {"", "  "})
+    @NullSource
+    void testGetTotalMedalsWithInvalidNationThrows(String input) {
+        assertThrows(IllegalArgumentException.class, () -> olympics.getTotalMedals(input));
     }
 
     // updateMedalStatistics Tests

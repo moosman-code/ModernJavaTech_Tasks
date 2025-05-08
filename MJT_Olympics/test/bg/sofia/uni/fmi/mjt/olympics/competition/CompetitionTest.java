@@ -35,7 +35,6 @@ public class CompetitionTest {
         assertThrows(IllegalArgumentException.class,
                 () -> new Competition(null, "Triathlon", new HashSet<>()),
                 "IllegalArgumentException exception not thrown");
-
     }
 
     @Test

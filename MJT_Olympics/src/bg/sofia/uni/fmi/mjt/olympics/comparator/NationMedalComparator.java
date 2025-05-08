@@ -22,10 +22,11 @@ public class NationMedalComparator implements Comparator<String> {
         int totalMedals1 = olympics.getTotalMedals(nation1);
         int totalMedals2 = olympics.getTotalMedals(nation2);
 
-        if (totalMedals1 != totalMedals2) {
-            return Integer.compare(totalMedals1, totalMedals2);
+        int medalsCompareResult = Integer.compare(totalMedals1, totalMedals2);
+        if (medalsCompareResult == 0) {
+            return nation1.compareTo(nation2);
         }
 
-        return nation1.compareTo(nation2);
+        return medalsCompareResult;
     }
 }

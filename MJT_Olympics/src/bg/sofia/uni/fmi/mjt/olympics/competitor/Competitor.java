@@ -2,7 +2,7 @@ package bg.sofia.uni.fmi.mjt.olympics.competitor;
 
 import java.util.Collection;
 
-public interface Competitor {
+public interface Competitor extends Comparable<Competitor> {
 
     /**
      * Returns the unique identifier of the competitor.

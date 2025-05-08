@@ -4,11 +4,14 @@ import bg.sofia.uni.fmi.mjt.olympics.competitor.Athlete;
 import bg.sofia.uni.fmi.mjt.olympics.competitor.Competitor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 public class CompetitionTest {
     private Competitor athlete;
@@ -93,6 +96,26 @@ public class CompetitionTest {
         assertTrue(firstCompetition.equals(thirdCompetition)
                 && thirdCompetition.equals(testCompetition)
                 && firstCompetition.equals(testCompetition));
+    }
+
+    //  interface Tests
+    @Test
+    void testFetcherIfCompetitionIsNull() {
+        CompetitionResultFetcher fetcher = new CompetitionResultFetcher() {};
+        assertThrows(IllegalArgumentException.class, () -> fetcher.getResult(null));
+    }
+
+    @Test
+    void testGetResultReturnsEmptyTreeSetWhenNoCompetitors() {
+        Set<Competitor> emptySet = new HashSet<>();
+        Competition competition = Mockito.mock(Competition.class);
+        when(competition.competitors()).thenReturn(emptySet);
+
+        CompetitionResultFetcher fetcher = new CompetitionResultFetcher() {};
+
+        TreeSet<Competitor> result = fetcher.getResult(competition);
+
+        assertTrue(result.isEmpty());
     }
 
     // hashCode Test

@@ -1,12 +1,13 @@
 package bg.sofia.uni.fmi.mjt.olympics.comparator;
 
 import bg.sofia.uni.fmi.mjt.olympics.MJTOlympics;
+import bg.sofia.uni.fmi.mjt.olympics.Olympics;
 
 import java.util.Comparator;
 
 public class NationMedalComparator implements Comparator<String> {
 
-    private final MJTOlympics olympics;
+    private MJTOlympics olympics;
 
     public NationMedalComparator(MJTOlympics olympics) {
         this.olympics = olympics;

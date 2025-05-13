@@ -4,7 +4,7 @@ out/
 !**/src/test/**/out/
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr

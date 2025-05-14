@@ -60,8 +60,8 @@ public class ControlCenter implements ControlCenterApi {
         int priceCar = priceAndTimeForCar.getValue();
 
         if (shippingMethod == ShippingMethod.CHEAPEST) {
-            boolean bikeWithinPrice = priceBike <= maxPrice || maxPrice == IGNORE_PRICE_CONSTRAINT;
-            boolean carWithinPrice = priceCar <= maxPrice || maxPrice == IGNORE_PRICE_CONSTRAINT;
+            boolean bikeWithinPrice = (priceBike <= maxPrice) || (maxPrice == IGNORE_PRICE_CONSTRAINT);
+            boolean carWithinPrice = (priceCar <= maxPrice) || (maxPrice == IGNORE_PRICE_CONSTRAINT);
 
             if (bikeWithinPrice && priceBike < priceCar) {
                 return new DeliveryInfo(bikeLocation, timeBike, priceBike, DeliveryType.BIKE);
@@ -70,8 +70,8 @@ public class ControlCenter implements ControlCenterApi {
                 return new DeliveryInfo(carLocation, timeCar, priceCar, DeliveryType.CAR);
             }
         } else { // FASTEST
-            boolean bikeWithinTime = timeBike <= maxTime || maxTime == IGNORE_TIME_CONSTRAINT;
-            boolean carWithinTime = timeCar <= maxTime || maxTime == IGNORE_TIME_CONSTRAINT;
+            boolean bikeWithinTime = (timeBike <= maxTime) || (maxTime == IGNORE_TIME_CONSTRAINT);
+            boolean carWithinTime = (timeCar <= maxTime) || (maxTime == IGNORE_TIME_CONSTRAINT);
 
             if (bikeWithinTime && timeBike < timeCar) {
                 return new DeliveryInfo(bikeLocation, timeBike, priceBike, DeliveryType.BIKE);

@@ -8,7 +8,7 @@ out/
 *.iws
 *.iml
 *.ipr
-lib
+lib/
 
 ### Eclipse ###
 .apt_generated

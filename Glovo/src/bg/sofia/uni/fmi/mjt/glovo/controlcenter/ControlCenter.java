@@ -51,10 +51,8 @@ public class ControlCenter implements ControlCenterApi {
         Location bikeLocation = getDeliveryGuyLocation(MapEntityType.DELIVERY_GUY_BIKE);
         Location carLocation = getDeliveryGuyLocation(MapEntityType.DELIVERY_GUY_CAR);
 
-        Map.Entry<Integer, Integer> priceAndTimeForBike = findOptimalDeliveryPath(clientLocation, restaurantLocation, bikeLocation,
-                DeliveryType.BIKE);
-        Map.Entry<Integer, Integer> priceAndTimeForCar = findOptimalDeliveryPath(clientLocation, restaurantLocation, carLocation,
-                DeliveryType.CAR);
+        Map.Entry<Integer, Integer> priceAndTimeForBike = findOptimalDeliveryPath(clientLocation, restaurantLocation, bikeLocation, DeliveryType.BIKE);
+        Map.Entry<Integer, Integer> priceAndTimeForCar = findOptimalDeliveryPath(clientLocation, restaurantLocation, carLocation, DeliveryType.CAR);
 
         int timeBike = priceAndTimeForBike.getKey();
         int priceBike = priceAndTimeForBike.getValue();
@@ -62,23 +60,30 @@ public class ControlCenter implements ControlCenterApi {
         int priceCar = priceAndTimeForCar.getValue();
 
         if (shippingMethod == ShippingMethod.CHEAPEST) {
-            if ((priceBike <= maxPrice ||  maxPrice == IGNORE_PRICE_CONSTRAINT) && priceBike < priceCar) {
+            boolean bikeWithinPrice = priceBike <= maxPrice || maxPrice == IGNORE_PRICE_CONSTRAINT;
+            boolean carWithinPrice = priceCar <= maxPrice || maxPrice == IGNORE_PRICE_CONSTRAINT;
+
+            if (bikeWithinPrice && priceBike < priceCar) {
                 return new DeliveryInfo(bikeLocation, timeBike, priceBike, DeliveryType.BIKE);
-            } else if (priceCar <= maxPrice ||  maxPrice == IGNORE_PRICE_CONSTRAINT) {
+            }
+            if (carWithinPrice) {
                 return new DeliveryInfo(carLocation, timeCar, priceCar, DeliveryType.CAR);
-            } else {
-                return null;
+            }
+        } else { // FASTEST
+            boolean bikeWithinTime = timeBike <= maxTime || maxTime == IGNORE_TIME_CONSTRAINT;
+            boolean carWithinTime = timeCar <= maxTime || maxTime == IGNORE_TIME_CONSTRAINT;
+
+            if (bikeWithinTime && timeBike < timeCar) {
+                return new DeliveryInfo(bikeLocation, timeBike, priceBike, DeliveryType.BIKE);
+            }
+            if (carWithinTime) {
+                return new DeliveryInfo(carLocation, timeCar, priceCar, DeliveryType.CAR);
             }
         }
 
-        if ((timeBike <= maxTime || maxTime == IGNORE_TIME_CONSTRAINT) && timeBike < timeCar) {
-            return new DeliveryInfo(bikeLocation, timeBike, priceBike, DeliveryType.BIKE);
-        } else if (timeCar <= maxTime ||  maxTime == IGNORE_TIME_CONSTRAINT) {
-            return new DeliveryInfo(carLocation, timeCar, priceCar, DeliveryType.CAR);
-        } else {
-            return null;
-        }
+        return null;
     }
+
 
     private Map.Entry<Integer, Integer> findOptimalDeliveryPath(Location clientLocation,
                                                                 Location restaurantLocation,

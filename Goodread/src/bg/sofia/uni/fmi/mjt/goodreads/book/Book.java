@@ -36,8 +36,6 @@ public record Book(
                     Double.parseDouble(tokens[5]),
                     Integer.parseInt(ratingCount),
                     tokens[7]);
-
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

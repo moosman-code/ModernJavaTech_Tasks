@@ -6,6 +6,18 @@ import java.awt.image.BufferedImage;
 
 public class SobelEdgeDetection implements EdgeDetectionAlgorithm{
 
+    private static final int[][] gx = {
+            {-1, 0, 1},
+            {-2, 0, 2},
+            {-1, 0, 1}
+    };
+
+    private static final int[][] gy = {
+            {1, 2, 1},
+            {0, 0, 0},
+            {-1, -2, -1}
+    };
+
     private final ImageAlgorithm grayscaleAlgorithm;
 
     public SobelEdgeDetection(ImageAlgorithm grayscaleAlgorithm)  {
@@ -23,18 +35,6 @@ public class SobelEdgeDetection implements EdgeDetectionAlgorithm{
         int width = greyImage.getWidth();
         int height = greyImage.getHeight();
         BufferedImage output = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-
-        int[][] gx = {
-                {-1, 0, 1},
-                {-2, 0, 2},
-                {-1, 0, 1}
-        };
-
-        int[][] gy = {
-                {1, 2, 1},
-                {0, 0, 0},
-                {-1, -2, -1}
-        };
 
         for (int y = 1; y < height - 1; y++) {
             for (int x = 1; x < width - 1; x++) {
